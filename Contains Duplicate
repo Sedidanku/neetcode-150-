@@ -1,0 +1,9 @@
+class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        hashset = set() #syntax to declare hash , o(n)
+
+        for n in nums: #making for loop 
+            if n in hashset:
+                return True #if the number we saw is already in the hashset it is a duplicate
+            hashset.add(n) #otherwise add n to hashset 
+        return False
