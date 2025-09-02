@@ -1,0 +1,10 @@
+from typing import List 
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash_map = {} #makes a dictionary value -> index, nums is key and complement is value
+        
+        for i,num in enumerate(nums): #numbers input list as {val:0, val:1, ...}
+            difference = target - num #check if complement has been seen
+            if difference in hash_map:
+                return [hash_map[difference],i]
+            hash_map[num] = i #if complement is not found add current val to map 
