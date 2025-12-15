@@ -1,0 +1,9 @@
+from collections import Counter
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        count = Counter(s) #counts every char in s and return freq for each char
+        for i,c in enumerate(s): #creates a dictionary from s with index i, value s[i]=c
+            if count[c] == 1: #count of a single char 
+                return i #index from enumerate
+        return -1
+    
